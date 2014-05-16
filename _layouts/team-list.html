@@ -1,0 +1,31 @@
+<section class="teamList clearfix full-height" style="{{page.meta['style']}}{% if backgroundImage != null %}background-image:url('{{backgroundImage.url}}');background-size:cover;background-position:center top;{% endif %}">
+  <div class="row">
+    {% for post in page.posts reversed %}
+    {% assign profileImage = post.assets | first %}
+    <div class="team-member small-12 medium-6 large-3 columns" style="background-image:url('{{ profileImage }}');background-size:cover;">
+        <div class="details">
+          <h5>{{post.title}}</h5>
+          {{post.body}}
+        </div>
+    </div>
+    {% endfor %}
+
+    {% for subpage in page.pages %}
+      {% if subpage.meta['layout'] == 'joinTheFamily' %}
+          {% assign plusImage = subpage.assets | first %}
+          <div class="join-the-family small-12 medium-6 large-3 columns team-member end">
+            <div class='team-member'>
+              <div class='table-div'>
+                <div class='table-div-cell'>
+                  <div class='plus' style="background-image:url('{{plusImage.url}}')">
+                  </div>
+                  <h5>{{subpage.title}}</h5>
+                  {{subpage.body}}
+                </div>
+              </div>
+            </div>
+          </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>

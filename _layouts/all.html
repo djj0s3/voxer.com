@@ -1,0 +1,77 @@
+{% if page.meta['layout'] == 'center' || page.meta['layout'] == null %}
+  {% include 'layouts/center' %}
+{% endif %}
+
+{% if page.meta['layout'] == 'left' %}
+  {% include 'layouts/left' %}
+{% endif %}
+
+{% if page.meta['layout'] == 'right' %}
+  {% include 'layouts/right' %}
+{% endif %}
+
+{% if page.meta['layout'] == 'caseStudyFull' %}
+  {% include 'layouts/case-study-full' %}
+{% endif %}
+
+{% if page.meta['layout'] == 'video' %}
+  {% include 'layouts/video' %}
+{% endif %}
+
+{% if page.meta['layout'] == 'featuresIconsLeft' %}
+  {% include 'layouts/features-left' %}
+{% endif %}
+
+{% if page.meta['layout'] == 'faq' %}
+  {% include 'layouts/faq' %}
+{% endif %}
+
+{% if page.meta['layout'] == 'featuresWithIcons' %}
+  {% include 'layouts/features-with-icons' %}
+{% endif %}
+
+{% if page.meta['layout'] == 'caseStudyColumns' %}
+  {% include 'layouts/case-study-columns' %}
+{% endif %}
+
+{% if page.meta['layout'] == 'banner' %}
+  {% include 'layouts/banner-wide' %}
+{% endif %}
+
+{% if page.meta['layout'] == 'full' %}
+  {% include 'layouts/full' %}
+{% endif %}
+
+{% if page.meta['layout'] == 'testimonials' %}
+  {% include 'layouts/testimonials' %}
+{% endif %}
+
+{% if page.meta['layout'] == 'fullPage' %}
+  <div class="layoutFullPage">
+    {% include 'layouts/full' %}
+  </div>
+{% endif %}
+
+{% if page.meta['layout'] == 'upcomingWebinars' %}
+  {% include 'layouts/upcoming-webinars' %}
+{% endif %}
+
+{% if page.meta['layout'] == 'webinarsList' %}
+  {% include 'layouts/webinars-list' %}
+{% endif %}
+
+{% if page.meta['layout'] == 'titleOnly' %}
+  {% include 'layouts/title-only' %}
+{% endif %}
+
+{% if page.meta['layout'] == 'itemWithLink' %}
+  {% include 'layouts/item-with-link' %}
+{% endif %}
+
+{% if page.meta['layout'] == 'teamList' %}
+  {% include 'layouts/team-list' %}
+{% endif %}
+
+{% if page.meta['layout'] == 'newsSection' %}
+  {% include 'layouts/news-section' %}
+{% endif %}

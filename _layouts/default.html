@@ -1,0 +1,35 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% if meta.description != null %}
+      <meta name="description" content="{{meta.description}}">
+    {% else %}
+      <meta name="description" content="{{site.meta.description}}">
+    {% endif %}
+    <link rel="stylesheet" href="/stylesheets/app.css" />
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+    <script src="/bower_components/modernizr/modernizr.js"></script>
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    {{ site.pages.headjs.body }}
+    <link rel="stylesheet" href="http://use.typekit.net/c/df6e11/proxima-nova:i4:i7:n3:n4:n6:n7.b5x:N:2,b61:N:2,b5t:N:2,b5w:N:2,b5y:N:2,b60:N:2/d?3bb2a6e53c9684ffdc9a98f6135b2a62e9fd3f37bbbb30d58844c762ee59a7480f879e28353123eebdaac3656525e7258acf755a646f6866906481f2b3c869f14be9feee33fea9799fcdddbe34b7e38fac8c8f84fadd086db2541e0d28805e05cde86e9570fa8616cf3619429e57639c60ba59dada2df6f7c2cda377dfc0ceb2555f3c30c1f12bf724869daed3a7640169c43d367300b8b2900ec754b72c45ac01e7a68eea74ba2729f0aff39ca2bf1852f5446445854d543e713236ea289b9eb02947c8ffcc90b34d4dce7fd1bb1a227a">
+    {% if meta.title != null %}
+      <title>{{ meta.title }}</title>
+    {% else %}
+      <title>{{site.title}} | {{title}}</title>
+    {% endif %}
+  </head>
+  <body>
+  	{% include 'layouts/header' %}
+
+    {{ content }}
+
+    {% include 'layouts/footer' %}
+
+    <script src="/bower_components/foundation/js/foundation.min.js"></script>
+    <script src="/js/app.js"></script>
+    <script src="/js/contact.js"></script>
+    {{ scripts }}
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<section class="clearfix upcoming-webinars" style="{{page.meta['style'] != null}}{% if backgroundImage != null %}background-image:url('{{backgroundImage.url}}');background-size:cover;background-position:center top;{% endif %}">
+  <div class="row">
+    <div class="columns small-12">
+      <h5>{{page.title}}</h5>
+    </div>
+  </div>
+  {% for subpage in page.pages %}
+    <div class="row" data-equalizer>
+      <div class="columns small-12 large-8" data-equalizer-watch>
+        <div class='webinar-title'>
+          {{subpage.title}}
+        </div>
+        <div class='webinar-body'>
+          {{subpage.body}}
+        </div>
+      </div>
+      <div class='columns small-12 large-3' data-equalizer-watch>
+        <div class="table-div">
+          <div class="table-div-cell">
+            <a class='button button-hollow-orange'>
+              Register
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</section>

@@ -1,0 +1,9 @@
+{
+  "name": "voxer home",
+  "version": "0.0.1",
+  "private": "true",
+  "dependencies": {
+    "foundation": "https://github.com/zurb/bower-foundation.git#09b4ee024533e4e05434c0a67115e92db10033b2",
+    "jquery-ui": "~1.10.3"
+  }
+}

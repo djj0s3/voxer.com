@@ -1,0 +1,32 @@
+<section class="item-with-link clearfix" style="{{page.meta['style'] != null}}{% if backgroundImage != null %}background-image:url('{{backgroundImage.url}}');background-size:cover;background-position:center top;{% endif %}">
+  <div class='row' data-equalizer>
+    {% assign linkAsset = page.assets.first %}
+    {% if linkAsset != null %}
+      <a href="{{ linkAsset }}" target="_blank">
+    {% else %}
+      <a href="{{ page.meta['linkUrl'] }}" target="_blank">
+    {% endif %}
+      <div class="columns small-9 item-name" data-equalizer-watch>
+        <div class="row">
+          <div class="small-12 columns">
+            <h5 style="{{ page.meta['titleStyle'] }}">
+            {{ page.title }}
+            </h5>
+          </div>
+        </div>
+        <div class="row">
+          <div class="small-10 columns" style="{{ page.meta['textStyle'] }}">
+            {{ page.body }}
+          </div>
+        </div>
+      </div>
+      <div class="columns small-2 text-right" data-equalizer-watch>
+        <div class="table-div">
+          <div class="table-div-cell text-right">
+            {{ page.meta['linkText'] }}
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+</section>

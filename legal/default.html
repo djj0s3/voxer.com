@@ -1,0 +1,29 @@
+{% capture content %}
+<div class="content clearfix">
+{% assign page = site.pages.legal.pages.[slug] %}
+
+{% include 'layouts/legal-sub-nav' %}
+
+    {% assign leftImage = null %}
+    {% assign rightImage = null %}
+    {% assign backgroundImage = null %}
+
+    {% for image in page.assets %}
+        {% if image.meta['position'] == 'left' %}
+          {% assign leftImage = image %}
+        {% endif %}
+
+        {% if image.meta['position'] == 'right' %}
+          {% assign rightImage = image %}
+        {% endif %}
+
+        {% if image.meta['position'] == 'background' %}
+          {% assign backgroundImage = image %}
+        {% endif %}
+    {% endfor %}
+
+    {% include 'layouts/all' %}
+
+</div>
+{% endcapture %}
+{% include 'layouts/default' %}

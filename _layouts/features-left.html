@@ -1,0 +1,39 @@
+<section class="layoutFeaturesLeft clearfix" style="{{page.meta['style']}}{% if backgroundImage != null %}background-image:url('{{backgroundImage.url}}');background-size:cover;background-position:center top;{% endif %}">
+  <div class="row full-height"> 
+    <div class="small-12 columns full-height text-center">
+      <div class="table-div">
+        <div class="table-div-cell">
+          <h2 class="title">{{page.title}}</h2>
+          <div class="row">
+            <div class="small-12 columns">
+              {{page.body}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row" data-equalizer>
+    {% for subpage in page.pages%}
+      <div class="small-12 medium-6 columns full-height data-equalizer-watch container">
+        {% assign leftImage = subpage.assets.first %} 
+        <div class="row">
+          {% if leftImage != null %}
+            <div class="small-2 columns">
+              <img src="{{leftImage.url}}"/>
+            </div>
+            <div class="small-10 columns" >
+              <h3>{{subpage.title}}</h3>
+              {{subpage.body}}
+            </div>
+          {% else %}
+            <div class="small-12 columns" >
+              <h3>{{subpage.title}}</h3>
+              {{subpage.body}}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</section>

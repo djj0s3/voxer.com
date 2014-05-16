@@ -1,0 +1,18 @@
+{% assign page = site.pages.plans-and-pricing.pages.pricing %}
+<section class="layoutPricingTable clearfix full-height" style="{{page.meta['style']}}{% if backgroundImage != null %}background-image:url('{{backgroundImage.url}}');background-size:cover;background-position:center top;{% endif %}">
+  <div class="product-border-lines"></div>
+  <div class="row">
+    <div class="small-centered small-9 medium-10 columns">
+      <div class="row">
+        {% assign count = 1 %}
+        {% for subpage in page.pages%}
+          <div class="small-12 medium-5 columns full-height pricing-container{% if count == 1 %} medium-offset-1{% elsif count == 2 %}medium-pull-1{% endif %}">
+            {{subpage.body}}
+          <div class="show-for-small-only small-padding"></div>
+          </div>
+        {% assign count = count + 1 %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>

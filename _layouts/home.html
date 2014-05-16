@@ -1,0 +1,38 @@
+
+{% capture content %}
+<div class="home-page">
+<div class="content clearfix">
+{% for page in site.pages.home.pages %}
+
+    {% assign leftImage = null %}
+    {% assign rightImage = null %}
+    {% assign backgroundImage = null %}
+
+    {% for image in page.assets %}
+        {% if image.meta['position'] == 'left' %}
+          {% assign leftImage = image %}
+        {% endif %}
+
+        {% if image.meta['position'] == 'right' %}
+          {% assign rightImage = image %}
+        {% endif %}
+
+        {% if image.meta['position'] == 'background' %}
+          {% assign backgroundImage = image %}
+        {% endif %}
+    {% endfor %}
+
+  {% if page.slug == "ad" %}
+    {% include 'layouts/ad' %}
+  {% else %}
+
+    {% include 'layouts/all' %}
+
+  {% endif %}
+{% endfor %}
+{% include 'layouts/price-table' %}
+</div>
+</div>
+{% endcapture %}
+
+{% include 'layouts/default' %}

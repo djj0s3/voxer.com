@@ -1,0 +1,42 @@
+<section class="layoutRight clearfix" style="{{page.meta['style']}}{% if backgroundImage != null %}background-image:url('{{backgroundImage.url}}');background-size:cover;background-position:center top;{% endif %}">
+  <div class="row full-height"> 
+        {% if leftImage != null %}
+          <div class="show-for-medium-up medium-6 columns full-height">
+            <div class="table-div">
+              <div class="table-div-cell {% if leftImage.meta['vertical'] != null %}vertical-{{leftImage.meta['vertical']}}{% endif %}">
+                {% if leftImage.meta['link'] != null %}
+                  <a href="{{leftImage.meta['link']}}" target="_blank">
+                    <img src="{{leftImage.url}}" alt="leftImage.name">
+                  </a>
+                {% elsif leftImage.meta['videoLink'] %}
+                  <a href="#" data-reveal-id="{{leftImage.meta['name'] | strip }}">
+                    <img src="{{leftImage.url}}" alt="leftImage.name" class="inline-video">
+                  </a>
+                  <div id="{{leftImage.meta['name'] | strip }}" class="reveal-modal full" data-reveal>
+                    <div class="flex-video">
+                      <iframe width="420" height="315" src="{{leftImage.meta['videoLink']}}" frameborder="0" allowfullscreen></iframe>
+                    </div>
+
+                    <a class="close-reveal-modal">&#215;</a>
+                  </div>
+                {% else %}
+                  <img src="{{leftImage.url}}" alt="leftImage.name" class="">
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        {% endif %}
+        <div class="small-12 medium-6 columns {% if leftImage == null %}push-6{% endif %} full-height">
+          <div class="table-div">
+            <div class="table-div-cell">
+              <h2 style="{{page.meta['titleStyle']}}">{{page.title}}</h2>
+              <div class="row">
+                <div class="small-12 columns" style="{{page.meta['textStyle']}}">
+                  {{page.body}}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> 
+  </div>
+</section>

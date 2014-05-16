@@ -1,0 +1,13 @@
+<section class="webinarsList clearfix" style="{{page.meta['style'] != null}}{% if backgroundImage != null %}background-image:url('{{backgroundImage.url}}');background-size:cover;background-position:center top;{% endif %}">
+  <div class='row webinars'>
+    {% for subpage in page.pages %}
+      <div class="columns small-4 {{ if forloop.last }}end{{ endif }}">
+        <iframe src="{{ subpage.meta['videoUrl'] }}?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" frameborder="0">
+        </iframe>
+        <div class="title">
+          {{ subpage.title }}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</section>

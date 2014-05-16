@@ -1,0 +1,9 @@
+<div class="sticky contain-to-grid sub-nav-container">
+  <dl class="sub-nav">
+    {% for page in site.pages.legal.pages %}
+      <dd {% if slug == page.slug %}class="active"{% endif %}>
+        <a href="{{ page.url }}">{{page.title}}</a>
+      </dd>
+    {% endfor %}
+  </dl>
+</div>

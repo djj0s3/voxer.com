@@ -1,0 +1,27 @@
+#resumator-widget {
+	.resumator-department-heading {
+		font-size: rem-calc(24);
+		color: $voxer-orange;
+		font-weight: normal;
+	}
+	.resumator-job {
+		position: relative;
+	}
+	.resumator-job-title {
+		padding: 20px 0 10px 0;
+		font-weight: normal;
+	}
+	.resumator-job-info, .resumator-job-info-details {
+		padding: 10px 0 2px 0;
+		display: none;
+	}
+	.resumator-job-description-text p {
+		font-size: 1rem;
+	}
+	.resumator-job-view-details {
+		padding-bottom: 20px;
+		position: absolute;
+		right: 20px;
+		top: 20px;
+	}
+}

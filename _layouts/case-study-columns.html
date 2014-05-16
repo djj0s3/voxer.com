@@ -1,0 +1,41 @@
+{% for subpage in page.pages %}
+  {% assign remainder = forloop.index | modulo:2 %}
+  {% if remainder == 1 %}
+    <section class="layoutCaseStudyColumns clearfix" style="{{page.meta['style'] != null}}{% if backgroundImage != null %}background-image:url('{{backgroundImage.url}}');background-size:cover;background-position:center top;{% endif %}">
+      <div class="row">
+  {% endif %}
+    <div class="columns small-12 medium-6 container case-study">
+      <div class="table-div">
+        <div class="table-div-cell">
+          <h2>{{subpage.title}}</h2>
+          {% if subpage.meta['embedVideoUrl'] != null %}
+          <div class="row">
+            <div class="small-12 columns embedded-video">
+              <iframe src="{{ subpage.meta['embedVideoUrl'] }}" frameborder="0">
+              </iframe>
+            </div>
+          </div>
+          {% endif %}
+          <div class="row">
+            <div class="small-12 columns">
+              {{subpage.body}}
+            </div>
+          </div>
+          {% assign pdfLink = subpage.assets.first %}
+          {% if pdfLink != null %}
+            <div class="row">
+              <div class="small-12 columns">
+                <a class='button button-hollow-orange download-link' href="{{ pdfLink.url }}" target="_blank">
+                  Download Case Study
+                </a>
+              </div>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  {% if remainder == 0 or forloop.last %}
+      </div>
+    </section>
+  {% endif %}
+{% endfor %}

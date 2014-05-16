@@ -1,0 +1,13 @@
+<section class="title-only clearfix orange bold" style="{{page.meta['style'] != null}}{% if backgroundImage != null %}background-image:url('{{backgroundImage.url}}');background-size:cover;background-position:center top;{% endif %}">
+  <div class='row'>
+    {% if page.meta['linkTo'] != null %}
+      <a href="{{page.meta['linkTo']}}">
+    {% endif %}
+    <div class="columns small-11">
+      {{ page.title }}
+    </div>
+    {% if page.meta['linkTo'] != null %}
+      </a>
+    {% endif %}
+  </div>
+</section>

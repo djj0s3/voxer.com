@@ -1,0 +1,8 @@
+.DS_Store
+.sass-cache
+.git
+Gemfile
+Guardfile
+Gemfile.lock
+/node_modules/*
+node_modules/*

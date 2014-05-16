@@ -1,0 +1,17 @@
+<section class="layoutFAQ clearfix full-height" style="{{page.meta['style']}}{% if backgroundImage != null %}background-image:url('{{backgroundImage.url}}');background-size:cover;background-position:center top;{% endif %}">
+  <div class="row">
+    <div class="small-centered small-12 columns">
+      <h2 class="title text-left">{{page.title}}</h2>
+    </div>
+  </div>
+  <hr>
+  {% for post in page.posts reversed %}
+  <div class="row">
+    <div class="small-centered small-12 columns">
+        <a href="#" class="toggle"><h3>{{post.title}}</h3></a>
+        <div class="hidden toToggle">{{post.body}}</div>
+    </div>
+  </div>
+  <hr>
+  {% endfor %}
+</section>

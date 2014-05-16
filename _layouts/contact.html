@@ -1,0 +1,81 @@
+{% capture content %}
+<div class="content clearfix">
+
+{% for page in site.pages.contact.pages %}
+
+  <div class='contactPage'>
+    {% if page.slug == 'map' %}
+    <section class="layoutLeft map clearfix" style="{{page.meta['style']}};">
+      <div class="row full-height">
+        <div class="small-12 columns">
+          <div class="row">
+            <div class="small-12 columns">
+              {{page.body}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    {% elsif page.slug == 'contact-form' %}
+    <section class="contactFormLayout clearfix" style="{{page.meta['style']}};">
+          <div class="row">
+            <div class="small-4 medium-5 columns">
+              {{page.body}}
+            </div>
+            <div class="small-8 medium-7 columns end">
+              <form id="contact-form" class="contact-info-form">
+                <img src="/images/ajax-loader.gif" class="ajax-loader" />
+                <div class="row">
+                  <div class="small-12 columns">
+                    <label for="name">Name</label>
+                      <input class="text-input" name="name" for="name" type="text" />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="small-12 columns">
+                    <label for="email">Email</label>
+                      <input class="text-input" name="email" for="email" type="text" />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="small-12 columns">
+                    <label for="email">Company</label>
+                      <input class="text-input" name="company" for="company" type="text" />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="small-12 columns">
+                    <label for="message">Message</label>
+                      <textarea class="text-input text-area" name="message" for="message" rows="4">
+                      </textarea>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="small-12 medium-5 columns right">
+                    <input type="submit" class='button button-hollow contact-submit-button' />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="small-8 columns small-centered text-center">
+                    <span class="success-message">
+                      Thanks for contacting us, we'll reach out to you shortly!
+                    </span>
+                    <span class="error-message">
+                      Oops, something went wront, please check the email address you entered and try again.
+                    </span>
+                  </div>
+                </div>
+              </form>
+            </div>
+      </div>
+    </section>
+    {% else %}
+      {% include 'layouts/all' %}
+    {% endif %}
+  </div>
+
+{% endfor %}
+</div>
+{% endcapture %}
+
+{% include 'layouts/default' %}

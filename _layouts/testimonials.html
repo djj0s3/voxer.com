@@ -1,0 +1,29 @@
+    <section class="layoutTestimonials clearfix" style="{{page.meta['style']}}{% if backgroundImage != null %}background-image:url('{{backgroundImage.url}}');background-size:cover;background-position:center top;{% endif %}">
+        <div class="row">
+          <div class="small-12 columns">
+            <h2>{{page.title}}</h2>
+          </div>
+        </div>
+    {% for subpage in page.pages %}
+      {% assign remainder = forloop.index | modulo:3 %}
+      {% if remainder == 1 %}
+        <div class="row" data-equalizer>
+      {% endif %}
+        {% if subpage.meta['linkTo'] %}
+          <a href="{{ subpage.meta['linkTo'] }}">
+        {% endif %}
+          <div class="testimonial-item columns small-12 medium-4 container">
+              {% for image in subpage.assets %}
+                <img src="{{ image.url }}" />
+              {% endfor %}
+              <div data-equalizer-watch>{{ subpage.body }}</div>
+              <h3> {{ subpage.title }} </h3>
+          </div>
+        {% if subpage.meta['linkTo'] %}
+          </a>
+        {% endif %}
+    {% if remainder == 0 or forloop.last %}
+      </div>
+    </section>
+  {% endif %}
+{% endfor %}

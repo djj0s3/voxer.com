@@ -1,0 +1,9 @@
+<div class="sticky contain-to-grid sub-nav-container">
+  <dl class="sub-nav">
+    {% for link in site.pages.resources.pages.sub-nav.pages %}
+      <dd {% if link.meta['url'] contains url  %} class="active"{% endif %}>
+        <a href="{{ link.meta['url'] }}">{% if link.meta['title'] %} {{link.meta['title']}} {% else %} {{ link.title }} {% endif %}</a>
+      </dd>
+    {% endfor %}
+  </dl>
+</div>

@@ -1,0 +1,599 @@
+.content {
+
+	/**
+	* Common styles across all layout options
+	**/
+	section {
+	
+		.normal-height {
+			@extend %normal-height;
+		}
+
+		background-color: $voxer-white;
+		width: 100%;
+		border-bottom: 1px solid $voxer-very-light-gray;
+
+		@media #{$small-only} {
+			//background-image: none !important;
+			height: auto;
+			padding: rem-calc(20) 0;
+		}
+
+		h2, a {
+			color: $voxer-orange;
+		}
+
+		h2 {
+			font-size: rem-calc(24);
+			font-weight: bold;
+		}
+
+		.full-height {
+			@extend %full-height;
+		}
+
+	}
+
+	.banner {
+		background-color: $voxer-orange;
+		width: 100%;
+		text-align: center;
+		color: $voxer-white;
+
+		p {
+			line-height: 40px;
+			margin-bottom: 0;
+
+			@media #{$small-only}{
+				line-height: 1.6;
+			}
+		}
+
+		a {
+			color: $voxer-white;
+			text-decoration: underline;
+		}
+	}
+	
+	/**
+	* layout: banner
+	**/
+	.layoutBanner {
+		@extend .banner;
+
+		background-color: $voxer-very-light-gray;
+
+		p {
+			padding: rem-calc(30) 0;
+			margin-bottom: 0;
+		}
+
+		a {
+			color: $voxer-orange;
+		}
+	}
+
+	/**
+	* layout: left
+	**/
+	.layoutLeft {
+		p {
+			line-height: 1.2;
+		}
+	}
+
+	/**
+	* layout: right
+	**/
+	.layoutRight {
+		p {
+			line-height: 1.2;
+		}
+	}
+
+	/**
+	* layout: center
+	**/
+	.layoutCenter {
+		text-align: center;
+
+		h1 {
+			font-size: rem-calc(48);
+		}
+
+		p {
+			font-size: rem-calc(20);
+			font-weight: 300;
+		}
+	}
+
+	/**
+	* layout: case study full
+	**/
+	.layoutCaseStudyFull {
+
+		h2 {
+			font-size: 1rem;
+			font-weight: bold;
+		}
+
+		p {
+			font-size: 1rem;
+		}
+
+		em {
+			font-style: normal;
+			color: $voxer-gray;
+			font-size: rem-calc(18);
+		}
+
+		a {
+			@extend .right;
+			text-align: right;
+		}
+	}
+
+	/**
+	* layout: case study columns
+	**/
+	.layoutCaseStudyColumns {
+		p {
+			font-size: 1rem;
+		}
+
+		em {
+			font-style: normal;
+			color: $voxer-gray;
+			font-size: rem-calc(18);
+		}
+
+		.case-study {
+			padding: rem-calc(40);
+		}
+
+		.download-link {
+			margin: rem-calc(20) 0 rem-calc(16) 0;
+		}
+
+		.embedded-video {
+			background: $voxer-white center center no-repeat;
+			border-radius: rem-calc(6);
+			width: 100%;
+			max-width: rem-calc(447);
+			height: rem-calc(262);
+			margin-bottom: rem-calc(30);
+			iframe {
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+
+	/**
+	* layout: webinars list
+	**/
+
+	.webinarsList {
+		margin-top: rem-calc(40);
+	}
+
+	/**
+	* layout: upcoming webinars
+	**/
+
+	.upcoming-webinars {
+		.webinar-title {
+			font-weight: bold;
+			margin: rem-calc(20) 0;
+		}
+		.webinar-body > p{
+			font-size: 1em;
+		}
+		h5 {
+			color: $voxer-orange;
+		}
+	}
+
+	/**
+	* layout: news
+	**/
+
+	.newsPage {
+		h1 {
+			font-weight: normal;
+			font-size: rem-calc(32);
+		}
+		h2 {
+			font-weight: normal;
+			font-size: rem-calc(19);
+		}
+		.news-item {
+			margin: rem-calc(10) 0 rem-calc(5) 0;
+		}
+		.source p {
+			font-size: 1em;
+			color: $voxer-gray;
+		}
+		.headline h2 {
+			font-size: rem-calc(12);
+		}
+	}
+
+	/**
+	* layout: item-with-link
+	**/
+
+	.item-with-link:last-child {
+		margin-bottom: rem-calc(80);
+	}
+
+	.item-with-link {
+		.item-name {
+			color: $voxer-dark-gray;
+		}
+		p {
+			font-size: rem-calc(14);
+			color: $voxer-gray-alt2;
+		}
+
+		h5 {
+			color: $voxer-black-alt2;
+		}
+	}
+
+	/**
+	* layout: features with icons on the left
+	**/
+	.layoutFeaturesLeft {
+		background-color: $voxer-dark-gray;
+		color: $voxer-white;
+
+		h2 {
+			color: $voxer-white;
+			margin: rem-calc(40) 0;
+		}
+
+		h3 {
+			color: $voxer-orange;
+			font-size: rem-calc(18);
+			font-weight: bold;
+		}
+
+		p {
+			font-size: 1rem;
+		}
+
+		.container {
+			margin-bottom: rem-calc(20);
+		}
+		
+	}
+
+	/**
+	* layout: pricing table
+	**/
+	.layoutPricingTable {
+
+		padding: rem-calc(60) 0;
+		position: relative;
+
+		.product-border-lines {
+			border-bottom: 1px solid $voxer-very-light-gray;
+			border-top: 1px solid $voxer-very-light-gray;
+			height: 75px;
+			overflow: hidden;
+			position: absolute;
+			top: 195px;
+			width: 100%;
+			z-index: 0;
+		}
+
+		.small-padding {
+			margin-bottom: rem-calc(100);
+		}
+
+		&.full-height {
+			@extend %full-height;
+		}
+
+		p {
+			margin-bottom: 0;
+		}
+
+		a {
+			display: block;
+		}
+
+		ul {
+			color: $voxer-black;
+			list-style-type: none;
+			margin-left: 0;
+			line-height: 2;
+			font-size: rem-calc(16);
+		}
+	}
+
+	/**
+	* layout: faq
+	**/
+	.layoutFAQ {
+		height: 100%;
+
+		.row {
+			padding-top: rem-calc(30);
+			padding-bottom: rem-calc(30);
+		}
+
+		.title {
+			color: $voxer-light-gray;
+			font-size: rem-calc(30);
+			font-weight: normal;
+		}
+
+		h3 {
+			font-size: rem-calc(18);
+		}
+
+		p {
+			font-size: rem-calc(18);
+		}
+
+		.faq-container {
+			border-bottom: 1px solid $voxer-very-light-gray;
+		}
+	}
+
+	/**
+	* layout: testimonial
+	**/
+	.layoutTestimonials {
+
+		h2, h3 {
+			font-size: 1rem;
+			margin: rem-calc(30) 0;
+		}
+
+		h3 {
+			color: $voxer-black;
+			font-weight: bold;
+		}
+
+		p {
+			font-size: 1rem;
+		}
+	}
+
+	/**
+	* layout: team-list
+	**/
+	.teamList {
+		border-bottom: none;
+		.team-member {
+			height: 240px;
+			padding-left: 0;
+			padding-right: 0;
+			position: relative;
+		}
+		.details {
+			position: absolute;
+			bottom: 0;
+			text-align: center;
+			width: 100%;
+			background: $voxer-opaque-black;
+		}
+		h5 {
+			color: $voxer-orange;
+			margin-bottom: 0;
+			margin-top: rem-calc(10);
+		}
+		p {
+			color: $voxer-white;
+			font-size: 1rem;
+		}
+		.join-the-family {
+			text-align: center;
+			.team-member {
+				background-color: $voxer-orange;
+			}
+			.plus {
+				background-size: cover;
+				background-position: center top;
+				height: 32px;
+				width: 32px;
+				margin: 20px auto;
+			}
+			.details {
+				background-color: transparent;
+			}
+			h5 {
+				color: $voxer-white;
+				font-weight: bold;
+			}
+			p {
+				margin: 18px 0px;
+			}
+		}
+	}
+
+}
+
+/**
+* layout: title-with-list
+**/
+.titleWithList {
+	li {
+		text-align: left;
+	}
+	h2 {
+		text-align: center;
+	}
+	padding-top: rem-calc(20);
+}
+
+
+.content .features-with-icons-title {
+	h2 {
+		font-size: rem-calc(32);
+	}
+	border-bottom: none;
+}
+.content .features-with-icons {
+  .feature-item {
+    text-align: center;
+    h2 {
+      margin: rem-calc(20) 0;
+      font-size: rem-calc(18);
+      color: $voxer-dark-gray;
+    }
+    p {
+      font-size: rem-calc(16);
+      color: $voxer-black;
+    }
+  }
+}
+
+/**
+* layout: defaultLayout
+**/
+.defaultLayout,
+.layoutFullPage {
+
+	section {
+
+		h2, h3 {
+			margin: rem-calc(30) 0;
+		}
+
+		h2 {
+			color: $voxer-orange;
+			text-align: center;
+		}
+
+		h3 {
+			color: $voxer-black;
+			font-weight: bold;
+		}
+
+		p {
+			font-size: 1rem;
+		}
+	}
+}
+
+/**
+* layout: contact
+**/
+
+.contactPage {
+	.map {
+		background-color: $voxer-white;
+		margin: 0;
+		padding: 0;
+	}
+
+	.social-button {
+		padding-right: 50px;
+		@media #{$small-only}{
+			padding:0;
+		}
+		&:last-child {
+			padding-right: 0;
+		}
+	}
+
+	h2 {
+		text-align: center;
+		margin: rem-calc(30);
+	}
+
+	section {
+		padding-bottom: rem-calc(100);
+	}
+
+	.contactFormLayout{
+		background-color: $voxer-orange;
+		color: $voxer-white;
+		p {
+			font-size: rem-calc(18);
+		}
+	}
+	.contact-info-form {
+		position: relative;
+		color: $voxer-white;
+		label {
+			color: $voxer-white;
+			padding-bottom: 16px;
+			font-size: 16px;
+		}
+		.contact-submit-button {
+			text-align: center;
+			width: 100%;
+			&:hover {
+				border-color: $voxer-black;
+				color: $voxer-black;
+				background-color: transparent;
+			}
+		}
+		.text-input {
+			background: none repeat scroll 0 0 #DF5B03;
+			border: medium none;
+			border-radius: 5px;
+			color: #FFFFFF;
+			font-size: 16px;
+			height: 60px;
+			margin-bottom: 30px;
+			outline: medium none;
+		}
+		.text-area {
+			height: auto;
+		}
+		.ajax-loader {
+			display: none;
+			position: absolute;
+			z-index: 10;
+			left: 0;
+			right: 0;
+			margin-left: auto;
+			margin-right: auto;
+			top: 60px;
+		}
+		.success-message {
+			display: none;
+			text-align: center;
+			color: $voxer-green;
+		}
+		.error-message {
+			display: none;
+			text-align: center;
+			color: $voxer-dark-brown;
+		}
+	}
+}
+
+//home page
+
+.home-page {
+	.content .layoutLeft,
+	.content .layoutRight {
+		padding-top: 100px;
+		padding-bottom: 100px;
+	}
+}
+
+
+.table-div {
+	height: 100%;
+	display: table;
+	width: 100%;
+}
+
+.table-div-cell {
+	display: table-cell;
+	vertical-align: middle;
+	width: 100%;
+}
+
+//for images in left and right layouts
+.vertical-bottom {
+	vertical-align: bottom;
+}

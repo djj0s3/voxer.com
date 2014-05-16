@@ -1,0 +1,29 @@
+@media #{$small-up} {
+	#google-map {
+		width: 100%;
+		height: 300px;
+		margin: 0 auto;
+		display: block;
+		margin-bottom: -3px;
+	}
+}
+
+@media #{$medium-up} {
+	#google-map {
+		width: 100%;
+		height: 400px;
+		margin: auto;
+		display: inline-block;
+		margin-bottom: -3px;
+	}
+}
+
+@media #{$large-up} {
+	#google-map {
+		width: 100%;
+		height: 500px;
+		margin: auto;
+		display: inline-block;
+		margin-bottom: -3px;
+	}
+}

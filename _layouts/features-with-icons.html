@@ -1,0 +1,33 @@
+{% if page.meta['showTitle'] %}
+<section class="features-with-icons-title clearfix" style="{{page.meta['style']}}{% if backgroundImage != null %}background-image:url('{{backgroundImage.url}}');background-size:cover;background-position:center top;{% endif %}">
+  <div class="row full-height">
+    <h2 style="{% if page.meta['titleStyle'] != null %}{{ page.meta['titleStyle'] }}{% endif %}">
+      {{ page.title }}
+    </h2>
+  </div>
+</section>
+{% endif %}
+{% for subpage in page.pages %}
+  {% assign remainder = forloop.index | modulo:4 %}
+  {% if remainder == 1 %}
+  <section class="features-with-icons clearfix" style="{{page.meta['style']}}{% if backgroundImage != null %}background-image:url('{{backgroundImage.url}}');background-size:cover;background-position:center top;{% endif %}">
+    <div class="row full-height" data-equalizer>
+  {% endif %}
+      <div class="feature-item columns small-12 medium-6 large-3 {% if forloop.last %} end {% endif %}" data-equalizer-watch>
+        {% if subpage.meta['linkTo'] %}
+          <a href="{{ subpage.meta['linkTo'] }}">
+        {% endif %}
+            {% for image in subpage.assets %}
+              <img src="{{ image.url }}" />
+            {% endfor %}
+            <h2 style="{% if page.meta['featureHeadStyle'] != null %} {{ page.meta['featureHeadStyle'] }} {% endif %}"> {{ subpage.title }} </h2>
+            <p style="{% if page.meta['featureSubtextStyle'] != null %} {{ page.meta['featureSubtextStyle'] }} {% endif %}">{{ subpage.body | strip_html }}</p>
+        {% if subpage.meta['linkTo'] %}
+          </a>
+        {% endif %}
+      </div>
+  {% if remainder == 0 or forloop.last %}
+    </div>
+  </section>
+  {% endif %}
+{% endfor %}

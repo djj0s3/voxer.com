@@ -1,0 +1,12 @@
+{% capture content %}
+<div class="content clearfix">
+
+{% for page in site.pages.news.pages %}
+
+    {% include 'layouts/all' %}
+
+{% endfor %}
+</div>
+{% endcapture %}
+
+{% include 'layouts/default' %}
